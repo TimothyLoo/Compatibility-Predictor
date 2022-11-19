@@ -4,7 +4,7 @@ const {
   sftMultiplier,
   sftAverage,
 } = require('./evaluateTeam');
-let sampleData = require('./sampleData.json');
+const readline = require('readline');
 
 const compatabilityPredictor = (data) => {
   // I - JSON object: 2 arrays [team], [applicants]
@@ -51,4 +51,16 @@ const compatabilityPredictor = (data) => {
   return JSON.stringify(compatability);
 };
 
-console.log(compatabilityPredictor(sampleData));
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.question(
+  "what is your filename? (use the format './filename.json'): ",
+  (ans) => {
+    let sampleData = require(ans);
+    console.log(compatabilityPredictor(sampleData));
+    rl.close();
+  }
+);
