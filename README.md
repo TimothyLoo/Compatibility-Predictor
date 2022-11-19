@@ -30,3 +30,20 @@ Spicy Food Tolerance weight: 10%
 
 ## Results
 Each candidate's attributes will be multiplied against the weights for each attribute. The weighted averages will be summed together to get the applicant's compatability score. A resulting JSON object containing an array of applicants and their scores will be returned.
+
+# To Excute
+Clone the repository to your local computer.
+Go into the root folder of the repository.
+```sh
+cd Compatability-Predictor
+```
+Add your json file to the root directory. The json object should have 2 properties: team and applicants. Both properties should be an array of people objects. Each person object should have a name property with a string for the person's name. These should be unique for this exercise. The second property should be attributes which is an object consisting of 4 properties: intelligence, strength, endurance, spicyFoodTolerance. Each property should be a number between 0 and 10 inclusively.
+To run, use the command
+```sh
+node compatabilityPredictor.js
+```
+The command line will prompt you for your file name. Enter your file name:
+```sh
+./sampleData.json
+```
+The compatability predictor will log the result of the app to the console in the form of a JSON object.
