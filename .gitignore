@@ -1,0 +1,9 @@
+package-lock.json
+node_modules
+.DS_Store
+client/dist/bundle.js
+
+client
+server
+package.json
+webpack.config.js
